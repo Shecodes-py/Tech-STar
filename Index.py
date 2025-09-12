@@ -9,7 +9,7 @@ CORS(app)
 
 # Step 2: Load the trained model
 try:
-    with open("model.pkl", "rb") as f:
+    with open("SP_Model.pkl", "rb") as f:
         model = pickle.load(f)
     print("✅ Model loaded successfully, TYPE: ", type(model))
 except Exception as e:
