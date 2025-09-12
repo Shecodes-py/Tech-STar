@@ -48,8 +48,8 @@ def predict():
 
 @app.route("/", methods=["GET"])
 def home():
-    # return render_template("index.html")
-    return jsonify({"message": "Student Performance Prediction API is running 🚀"})
+    return render_template("index.html")
+    #return jsonify({"message": "Student Performance Prediction API is running 🚀"})
 
 
 # Step 4: Run app
