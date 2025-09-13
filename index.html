@@ -1,70 +1,63 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>GPA Predictor</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-    label { display: block; margin-top: 12px; }
-    input, select, button { padding: 8px; font-size: 16px; width: 100%; box-sizing: border-box; }
-    button { margin-top: 15px; background: #4CAF50; color: white; border: none; border-radius: 5px; }
-    button:hover { background: #45a049; cursor: pointer; }
-    .result { margin-top: 20px; padding: 12px; border-radius: 8px; background: #f3f3f3; font-size: 18px; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Student GPA Predictor</title>
+  <link rel="stylesheet" href="style.css"> <!-- Linking CSS -->
 </head>
 <body>
-  <h2>Student GPA Predictor</h2>
-  <form id="predictForm">
 
-    <label>Study Time Weekly (hours)
-      <input type="number" id="study_time" min="0" step="0.1" required>
-    </label>
+  <!-- Header -->
+  <header>
+    <h2>Student Performance Prediction</h2>
+  </header>
 
-    <label>Absences
-      <input type="number" id="absences" min="0" step="1" required>
-    </label>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>📊 Predict Your GPA</h1>
+    <p>Enter your details and let our model estimate your performance.</p>
+  </section>
 
-    <label>Parental Support
-      <select id="parental_support" required>
-        <option value="">--Select--</option>
-        <option value="None">None</option>
-        <option value="Low">Low</option>
-        <option value="Moderate">Moderate</option>
-        <option value="High">High</option>
+  <!-- Form Section -->
+  <div class="form-container">
+    <form id="predictForm">
+      <label for="gpa">GPA:</label>
+      <input type="number" step="0.01" id="gpa" name="gpa" required>
+
+      <label for="absences">Absences:</label>
+      <input type="number" id="absences" name="absences" required>
+
+      <label for="studentID">Student ID:</label>
+      <input type="text" id="studentID" name="studentID" required>
+
+      <label for="studytime">Study Time Weekly (hrs):</label>
+      <input type="number" id="studytime" name="studytime" required>
+
+      <label for="parentalSupport">Parental Support:</label>
+      <select id="parentalSupport" name="parentalSupport">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
       </select>
-    </label>
 
-    <label>Tutoring
-      <select id="tutoring" required>
-        <option value="">--Select--</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </label>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
 
-    <label>Parental Education
-      <select id="parental_education" required>
-        <option value="">--Select--</option>
-        <option value="None">None</option>
-        <option value="Primary">Primary</option>
-        <option value="Secondary">Secondary</option>
-        <option value="Higher">Higher</option>
-      </select>
-    </label>
+      <label for="ethnicity">Ethnicity:</label>
+      <input type="text" id="ethnicity" name="ethnicity" required>
 
-    <label>Extracurricular Activities
-      <select id="extracurricular" required>
-        <option value="">--Select--</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </label>
+      <button type="submit">Predict</button>
+    </form>
 
-    <button type="submit">Predict GPA</button>
-  </form>
+    <!-- Result Box -->
+    <div id="result">Your prediction will appear here.</div>
+  </div>
 
-  <div id="result" class="result" style="display:none;"></div>
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ by Team TEC Forward</p>
+  </footer>
 
-  <script src="app.js"></script>
+  <script src="script.js"></script> <!-- Linking JS -->
 </body>
 </html>
